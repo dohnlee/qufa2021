@@ -35,8 +35,8 @@ python get_outlier_rate.py --input_fname bank_test.csv
 python data_imputation.py --input_fname bank_incomplete_test.csv --result_path result_imputation
 ```
 
-- 보정 데이터 `./result_imputation/result.csv'
-- 보정 결과 `./result_imputation/result.json'
+- 보정 데이터 `./result_imputation/result.csv`
+- 보정 결과 `./result_imputation/result.json`
 ```
 {"result": {"age": 112, "job": 115, "marital": 112, "education": 109, "default": 95, "balance": 95, "housing": 100, "loan": 111, "contact": 97, "day": 107, "month": 104, "duration": 100, "campaign": 104, "pdays": 86, "previous": 102, "poutcome": 109, "deposit": 110}, "input_fname": "bank_incomplete_test.csv", "result_path": "result_imputation"}
 ```
@@ -48,8 +48,8 @@ python data_imputation.py --input_fname bank_incomplete_test.csv --result_path r
 python outlier_detection.py --input_fname bank_test.csv --result_path result_outlier
 ```
 
-- 보정 데이터 `./result_outlier/result.csv'
-- 보정 결과 `./result_outlier/result.json'
+- 보정 데이터 `./result_outlier/result.csv`
+- 보정 결과 `./result_outlier/result.json`
 
 ```
 {"result": {"num_outliers": 9, "outlier_indices": [890, 891, 951, 952, 961, 968, 982, 985, 987]}}
