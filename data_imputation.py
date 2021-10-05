@@ -169,12 +169,13 @@ class SelfAttentionUnit(nn.Module):
         self.ln = nn.LayerNorm([max_len, embed_dim])
 
     def forward(self, x):
+        x = x.permute(1, 0, 2)
         res, _ = self.attn(key=x, value=x, query=x)
         res = self.act(res)
         if self.skip_connection:
-            return self.ln(res + x)
-        else:
-            return self.ln(res)
+            res = res + x
+        res = res.permute(1, 0, 2)
+        return self.ln(res)
 
 
 class Featurize(nn.Module):
